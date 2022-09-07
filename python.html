@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RDFIA - Fiche de Python</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="canonical" href="http://webia.lip6.fr//~dancette/deep-learning/python.html">
+  <link rel="alternate" type="application/rss+xml" title="TP Deep Learning 2019 - Polytech" href="http://webia.lip6.fr//~dancette/deep-learning/feed.xml" />
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <div class="site-header">
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <i class="fa fa-navicon fa-lg"></i>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/~dancette/deep-learning/">Home</a>
+        <!-- 
+          
+          <a class="page-link" href="/~dancette/deep-learning/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/~dancette/deep-learning/">TP Deep Learning  2019 - Polytech</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/~dancette/deep-learning/python.html">RDFIA - Fiche de Python</a>
+          
+         -->
+      </div>
+    </nav>
+
+
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <p>Basé sur <a href="https://learnxinyminutes.com/docs/python/">Learning Python in Y minutes</a></p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Single line comments start with a number symbol.
+</span>
+<span class="s">""" Multiline strings can be written
+    using three "s, and are often used
+    as comments
+"""</span>
+
+<span class="c1">####################################################
+# 1. Primitive Datatypes and Operators
+####################################################
+</span>
+<span class="c1"># You have numbers
+</span><span class="mi">3</span>  <span class="c1"># =&gt; 3
+</span>
+<span class="c1"># Math is what you would expect
+</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># =&gt; 2
+</span><span class="mi">8</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># =&gt; 7
+</span><span class="mi">10</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># =&gt; 20
+</span><span class="mi">35</span> <span class="o">/</span> <span class="mi">5</span>  <span class="c1"># =&gt; 7
+</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># =&gt; 2 /!\ in Python 2, divisions on ints apply floor directly, you need to use floats. This is not true in Python 3
+</span><span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span>  <span class="c1"># =&gt; 1 (modulo)
+</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">4</span>  <span class="c1"># =&gt; 16 = 2^4 (exponentiation)
+</span>
+<span class="c1"># To fix division we need to learn about floats.
+</span><span class="mf">2.0</span>  <span class="c1"># This is a float
+</span><span class="mf">11.0</span> <span class="o">/</span> <span class="mf">4.0</span>  <span class="c1"># =&gt; 2.75
+</span><span class="mf">5.0</span> <span class="o">//</span> <span class="mf">3.0</span>  <span class="c1"># =&gt; 1.0 # forced integer division
+</span>
+<span class="c1"># Booleans and operations
+</span><span class="bp">True</span> <span class="ow">and</span> <span class="bp">False</span>  <span class="c1"># =&gt; False
+</span><span class="bp">False</span> <span class="ow">or</span> <span class="bp">True</span>  <span class="c1"># =&gt; True
+</span><span class="ow">not</span> <span class="bp">True</span>  <span class="c1"># =&gt; False
+</span><span class="ow">not</span> <span class="bp">False</span>  <span class="c1"># =&gt; True
+</span>
+<span class="c1"># Comparisons
+</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span>  <span class="c1"># =&gt; True
+</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span>  <span class="c1"># =&gt; False
+</span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">1</span>  <span class="c1"># =&gt; False
+</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">1</span>  <span class="c1"># =&gt; True
+</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">10</span>  <span class="c1"># =&gt; True
+</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">10</span>  <span class="c1"># =&gt; False
+</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">2</span>  <span class="c1"># =&gt; True
+</span><span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">2</span>  <span class="c1"># =&gt; True
+</span>
+<span class="c1"># Strings
+</span><span class="s">"This is a string."</span>
+<span class="s">'This is also a string.'</span>
+<span class="s">"Hello "</span> <span class="o">+</span> <span class="s">"world!"</span>  <span class="c1"># =&gt; "Hello world!"
+</span><span class="s">"This is a string"</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># =&gt; 'T'
+</span><span class="nb">len</span><span class="p">(</span><span class="s">"This is a string"</span><span class="p">)</span>  <span class="c1"># =&gt; 16
+</span><span class="s">"%d %s cost %f %s"</span> <span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">'apples'</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s">'euros'</span><span class="p">)</span> <span class="c1"># String formatting with %, youc usually use variables in the ()
+</span>
+<span class="c1"># None is an object
+</span><span class="bp">None</span>  <span class="c1"># =&gt; None
+</span><span class="s">"etc"</span> <span class="ow">is</span> <span class="bp">None</span>  <span class="c1"># =&gt; False (compare None with is)
+</span><span class="bp">None</span> <span class="ow">is</span> <span class="bp">None</span>  <span class="c1"># =&gt; True
+</span>
+<span class="c1"># Cast
+</span><span class="nb">float</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># =&gt; 3.0
+</span><span class="nb">int</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>  <span class="c1"># =&gt; 3
+</span>
+
+<span class="c1">####################################################
+# 2. Variables and Collections
+####################################################
+</span>
+<span class="c1"># No need to declare variables before assigning to them.
+</span><span class="n">some_var</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Convention is to use lower_case_with_underscores
+</span><span class="n">some_var</span>  <span class="c1"># =&gt; 5
+</span>
+<span class="c1"># Declare list
+</span><span class="n">li</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty
+</span><span class="n">other_li</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># prefilled
+</span>
+<span class="c1"># Add stuff to the end of a list with append
+</span><span class="n">li</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># li is now [1]
+</span><span class="n">li</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># li is now [1, 2]
+</span><span class="n">li</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># li is now [1, 2, 4]
+</span><span class="n">li</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># li is now [1, 2, 4, 3]
+</span><span class="n">li</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>  <span class="c1"># =&gt; 3 and li is now [1, 2, 4]  (Remove from the end with pop)
+</span>
+<span class="c1"># Indexing
+</span><span class="n">li</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># =&gt; 1 (indexing list)
+</span><span class="n">li</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span> <span class="c1"># (change item with index)
+</span><span class="n">li</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># =&gt; 3 (last element)
+</span><span class="n">li</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># =&gt; [2, 4] (items 1 to 2 &lt;index of first element&gt;:&lt;index of last element + 1&gt;)
+</span><span class="n">li</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>  <span class="c1"># =&gt; [4, 3] (items 2 to end of list)
+</span><span class="n">li</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># =&gt; [1, 2, 4] (items 0 to 2)
+</span><span class="nb">len</span><span class="p">(</span><span class="n">li</span><span class="p">)</span>  <span class="c1"># =&gt; 6 (length of the list)
+</span>
+<span class="c1"># Tuples are like lists but are immutable
+</span><span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># =&gt; 1
+</span><span class="nb">len</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>  <span class="c1"># =&gt; 3
+# You can unpack tuples (or lists) into variables
+</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># a is now 1, b is now 2 and c is now 3
+</span>
+<span class="c1"># Dictionaries store mappings
+</span><span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># empty
+</span><span class="n">filled_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">"one"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"two"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"three"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span> <span class="c1"># prefield
+</span><span class="n">filled_dict</span><span class="p">[</span><span class="s">"one"</span><span class="p">]</span>  <span class="c1"># =&gt; 1
+</span><span class="n">filled_dict</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span>  <span class="c1"># =&gt; ["three", "two", "one"]
+</span><span class="n">filled_dict</span><span class="p">.</span><span class="n">values</span><span class="p">()</span>  <span class="c1"># =&gt; [3, 2, 1]
+</span><span class="n">filled_dict</span><span class="p">.</span><span class="n">items</span><span class="p">()</span>  <span class="c1"># =&gt; [("one", 1), ("two", 2), ("three", 3)]
+</span><span class="n">filled_dict</span><span class="p">[</span><span class="s">"four"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># now, filled_dict["four"] =&gt; 4
+</span>
+<span class="c1">####################################################
+#  3. Control Flow
+####################################################
+</span>
+
+<span class="c1"># Python has a print statement
+</span><span class="k">print</span><span class="p">(</span><span class="s">"I'm Python. Nice to meet you!"</span><span class="p">)</span>  <span class="c1"># =&gt; I'm Python. Nice to meet you!
+</span>
+<span class="c1"># Let's just make a variable
+</span><span class="n">some_var</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Here is an if statement. Indentation is significant in python!
+# prints "some_var is smaller than 10"
+</span><span class="k">if</span> <span class="n">some_var</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"some_var is totally bigger than 10."</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">some_var</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>  <span class="c1"># This elif clause is optional.
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"some_var is smaller than 10."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>  <span class="c1"># This is optional too.
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"some_var is indeed 10."</span><span class="p">)</span>
+
+<span class="s">"""
+For loops iterate over lists
+prints:
+    dog is a mammal
+    cat is a mammal
+    mouse is a mammal
+"""</span>
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="p">[</span><span class="s">"dog"</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">,</span> <span class="s">"mouse"</span><span class="p">]:</span>
+    <span class="c1"># You can use {0} to interpolate formatted strings. (See above.)
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"{0} is a mammal"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">animal</span><span class="p">))</span>
+
+<span class="s">"""
+"range(number)" returns a list of numbers
+from zero to the given number
+prints:
+    0
+    1
+    2
+    3
+"""</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="s">"""
+"range(lower, upper)" returns a list of numbers
+from the lower number to the upper number
+prints:
+    4
+    5
+    6
+    7
+"""</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="s">"""
+While loops go until a condition is no longer met.
+prints:
+    0
+    1
+    2
+    3
+"""</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Shorthand for x = x + 1
+</span>
+
+<span class="c1">####################################################
+# 4. Functions
+####################################################
+</span>
+<span class="c1"># Use "def" to create new functions
+</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"x is {0} and y is {1}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># Return values with a return statement
+</span>
+<span class="c1"># Calling functions with parameters
+</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># =&gt; prints out "x is 5 and y is 6" and returns 11
+</span><span class="n">add</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Another way to call functions is with keyword arguments
+</span>
+<span class="c1"># Optional parameters and default values
+</span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">"Test"</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"%s: %d"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">)</span> <span class="c1"># returning a tuple
+</span>
+<span class="n">xy</span><span class="p">,</span> <span class="n">yz</span> <span class="o">=</span> <span class="n">myfunc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># =&gt; Test: prints 6, return (3, 5) unpacked in xy and yz variables
+</span><span class="n">myfunc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">"Other"</span><span class="p">)</span> <span class="c1"># =&gt; Other: 6
+</span><span class="n">myfunc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"Other"</span><span class="p">)</span> <span class="c1"># =&gt; Other: 3 (using position only)
+</span><span class="n">myfunc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">"Other"</span><span class="p">)</span> <span class="c1"># =&gt; Other: 3 (without giving 3rd arg "z")
+</span><span class="n">myfunc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">"Other"</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># =&gt; Other: 3 (keyword args don't have specific order)
+</span>
+
+<span class="c1">####################################################
+# 5. Modules
+####################################################
+</span>
+<span class="c1"># You can import modules
+</span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">print</span> <span class="n">math</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>  <span class="c1"># =&gt; 4
+</span>
+<span class="c1"># You can get specific functions from a module
+</span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">floor</span>
+
+<span class="k">print</span> <span class="n">ceil</span><span class="p">(</span><span class="mf">3.7</span><span class="p">)</span>  <span class="c1"># =&gt; 4.0
+</span><span class="k">print</span> <span class="n">floor</span><span class="p">(</span><span class="mf">3.7</span><span class="p">)</span>  <span class="c1"># =&gt; 3.0
+</span>
+<span class="c1"># You can import all functions from a module.
+# Warning: this is not recommended
+</span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div>
+<p>File 1 of 1
+Get Public Link |
+Download</p>
+
+      </div>
+    </div>
+
+    <div class="footer center">
+
+  <!-- Copyright &copy; <a href=http://diezcami.github.io target="_blank">Camille Diez</a> 2015<BR /> -->
+  Powered by <a href=http://jekyllrb.com target="_blank">Jekyll</a>
+
+</div>
+
+
+  </body>
+</html>
