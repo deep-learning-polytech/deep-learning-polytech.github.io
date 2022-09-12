@@ -5,6 +5,10 @@ p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0; }
+strong, b {
+    font-weight: bold;
+}
+
 
 /* Basic Styling
  * ============================================== */
